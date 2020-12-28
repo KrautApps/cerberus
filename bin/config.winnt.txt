@@ -4,7 +4,7 @@
 '
 'Can be overriden via transcc cmd line
 '
-MODPATH="${CERBERUSDIR}/modules;${CERBERUSDIR}/modules_ext;D:\CerberusX\CerberusModules"
+MODPATH="${CERBERUSDIR}/modules;${CERBERUSDIR}/modules_ext"
 '--------------------
 
 '--------------------
@@ -12,7 +12,7 @@ MODPATH="${CERBERUSDIR}/modules;${CERBERUSDIR}/modules_ext;D:\CerberusX\Cerberus
 '
 'Can be overriden via transcc cmd line
 '
-TARGETPATH="${CERBERUSDIR}/targets;${CERBERUSDIR}/targets_ext;D:\CerberusX\CerberusTargets"
+TARGETPATH="${CERBERUSDIR}/targets;${CERBERUSDIR}/targets_ext"
 '--------------------
 
 '--------------------
@@ -35,10 +35,7 @@ HTML_PLAYER="${CERBERUSDIR}\bin\cserver_winnt.exe"
 '***** DO NOT use mingw64-5.1.0 as it has a linker bug *****
 
 '***** 64 bit mingw *****
-MINGW_PATH="D:\TDM-GCC-64"
-'MINGW_PATH="D:\TDM-GCC-64_92"
-'MINGW_PATH="D:\BlitzMax\MinGW32x64"
-'MINGW_PATH="${CERBERUSDIR}/3rdparty/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64"
+MINGW_PATH="D:\Programme\TDM-GCC-64"
 '--------------------
 
 '--------------------
@@ -48,7 +45,7 @@ MINGW_PATH="D:\TDM-GCC-64"
 '
 'The Java JDK is currently available here: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 '
-JDK_PATH="D:\Program Files (x86)\Java\jdk1.8.0_172"
+JDK_PATH="D:\Programme\Java\jdk1.8.0_271"
 '--------------------
 
 '--------------------
@@ -56,7 +53,7 @@ JDK_PATH="D:\Program Files (x86)\Java\jdk1.8.0_172"
 '
 'Must be set to a valid dir for ANDROID target support
 '
-ANDROID_PATH="D:\Program Files\Android\Android Studio"
+ANDROID_PATH="D:\Programme\Android Studio"
 '--------------------
 
 '--------------------
@@ -102,7 +99,7 @@ ANDROID_NDK_PATH="C:\Users\mike\AppData\Local\Android\Sdk\ndk\21.1.6352462"
 '
 'Must be set for XNA and GLFW target support.
 '
-MSBUILD_PATH="${PROGRAMFILES(x86)}\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe"
+MSBUILD_PATH="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
 '--------------------
 
 '--------------------
@@ -115,4 +112,5 @@ AGK_PATH="D:\Program Files (x86)\The Game Creators\AGK2"
 '--------------------
 
 '--->> BEGIN OF JUNGLE IDE GENERATED CONFIG
+MINGW_PATH= "D:\Programme\MinGW\MinGW"
 '--->> END OF JUNGLE IDE GENERATED CONFIG
