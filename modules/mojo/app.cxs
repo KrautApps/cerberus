@@ -246,6 +246,10 @@ Function Millisecs:Int()
 	Return _game.Millisecs()
 End
 
+Function Microsecs:Int()
+	Return _game.Microsecs()
+End
+
 Function GetDate:Int[]()
 	Local date:Int[7]
 	GetDate date

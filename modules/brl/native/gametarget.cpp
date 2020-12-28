@@ -56,6 +56,7 @@ public:
 	virtual bool Suspended(){ return _suspended; }
 	
 	virtual int Millisecs();
+	virtual int Microsecs();
 	virtual void GetDate( Array<int> date );
 	virtual int SaveState( String state );
 	virtual String LoadState();
@@ -152,11 +153,35 @@ int BBGame::Millisecs(){
 	return 0;
 }
 
+int BBGame::Microsecs(){
+	return 0;
+}
+
 void BBGame::GetDate( Array<int> date ){
 	int n=date.Length();
 	if( n>0 ){
 		time_t t=time( 0 );
 		
+		struct timeval tp;
+		
+#if _WIN32
+		static const uint64_t EPOCH = ((uint64_t) 116444736000000000ULL);
+
+		SYSTEMTIME  system_time;
+		FILETIME    file_time;
+		uint64_t    time;
+
+		GetSystemTime( &system_time );
+		SystemTimeToFileTime( &system_time, &file_time );
+		time =  ((uint64_t)file_time.dwLowDateTime )      ;
+		time += ((uint64_t)file_time.dwHighDateTime) << 32;
+
+		tp.tv_sec  = (long) ((time - EPOCH) / 10000000L);
+		tp.tv_usec = (long) (system_time.wMilliseconds * 1000);
+#else
+		gettimeofday(&tp, NULL);
+#endif
+
 #if _MSC_VER
 		struct tm tii;
 		struct tm *ti=&tii;
@@ -177,7 +202,7 @@ void BBGame::GetDate( Array<int> date ){
 						if( n>5 ){
 							date[5]=ti->tm_sec;
 							if( n>6 ){
-								date[6]=0;
+								date[6]=tp.tv_usec / 1000;
 							}
 						}
 					}

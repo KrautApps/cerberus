@@ -71,6 +71,10 @@ BBGame.prototype.Millisecs=function(){
 	return Date.now()-this._startms;
 }
 
+BBGame.prototype.Microsecs=function(){
+	return (Date.now()-this._startms) * 1000;
+}
+
 BBGame.prototype.GetDate=function( date ){
 	var n=date.length;
 	if( n>0 ){

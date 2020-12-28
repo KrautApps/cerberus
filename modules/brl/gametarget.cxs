@@ -29,6 +29,7 @@ Class BBGame Extends Null
 	Method SetUpdateRate:Void( hertz:Int )
 	Method SetKeyboardEnabled:Void( enabled:Bool )
 	Method Millisecs:Int()
+	Method Microsecs:Int()
 	Method GetDate:Void( date:Int[] )
 	Method CurrentDate:String()
 	Method CurrentTime:String()
@@ -42,7 +43,6 @@ Class BBGame Extends Null
 	Method SetMousePos:Void( xpos:Float, ypos:Float )
 	Method SetClipboard:Void( _text:String )
 	Method GetClipboard:String()
-	
 	
 	Method GetDeviceWidth:Int()
 	Method GetDeviceHeight:Int()

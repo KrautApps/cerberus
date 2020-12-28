@@ -12,6 +12,7 @@ public:
 	
 	virtual void SetUpdateRate( int hertz );
 	virtual int Millisecs();
+	virtual int Microsecs();
 	virtual int CountJoysticks( bool update );
 	virtual bool PollJoystick( int port,Array<Float> joyx,Array<Float> joyy,Array<Float> joyz,Array<bool> buttons );
 	virtual void OpenUrl( String url );
@@ -161,6 +162,10 @@ void BBGlfwGame::SetUpdateRate( int updateRate ){
 
 int BBGlfwGame::Millisecs(){
 	return int( GetTime()*1000.0 );
+}
+
+int BBGlfwGame::Microsecs(){
+	return int( GetTime()*1000000.0 );
 }
 
 int BBGlfwGame::CountJoysticks( bool update ){
@@ -702,7 +707,7 @@ void BBGlfwGame::SetDeviceWindow( int width,int height,int flags ){
 	glfwWindowHint( GLFW_DOUBLEBUFFER,doublebuffer );
 	glfwWindowHint( GLFW_SAMPLES,CFG_GLFW_WINDOW_SAMPLES );
 	glfwWindowHint( GLFW_REFRESH_RATE,60 );
-
+	
 #if !CFG_GLFW_MACOS_RETINA_ENABLED
 	glfwWindowHint( GLFW_COCOA_RETINA_FRAMEBUFFER, GLFW_FALSE );
 #endif
@@ -721,7 +726,7 @@ void BBGlfwGame::SetDeviceWindow( int width,int height,int flags ){
 		bbPrint( "glfwCreateWindow FAILED!" );
 		abort();
 	}
-		
+	
 	glfwGetWindowSize(_window, &_width, &_height); // Actual windowsize could be smaller than ordered.
 
 	++glfwGraphicsSeq;
