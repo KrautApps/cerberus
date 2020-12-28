@@ -24,6 +24,8 @@ Thumbs.db
 
 /modules/brl/native/GoogleAdMobAdsSdkiOS-6.8.0
 /modules/brl/native/GoogleAdMobAdsSdk-6.4.1.jar
+/modules_ext/*
+!/modules_ext/ReadMe.txt
 
 !/src/rebuildall*
 /src/createrelease
